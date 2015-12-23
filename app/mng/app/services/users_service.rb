@@ -1,5 +1,6 @@
 class UsersService
+  #
   def search_users
-    puts 'find_users'
+    users = User.all
   end
 end
