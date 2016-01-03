@@ -5,7 +5,7 @@ class UsersSeeder
 
   def initialize
     @model_name = 'User'
-    @talbe_name = 'users'
+    @talbe_name = 'pages'
     @file_path = File.dirname(__FILE__) + "/csv/#{@talbe_name}.csv"
 
     # テーブル初期化

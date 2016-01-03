@@ -1,6 +1,6 @@
-require_relative './../services/users_service'
+require_relative './../../services/users_service'
 
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
 
   #
   # ユーザ一覧取得（検索）処理

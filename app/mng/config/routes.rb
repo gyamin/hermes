@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/index'
+
+  # For api routing
+  # -------------------------
+  get 'users/index' => 'api/users#index'
+
+  # For web page routing
+  # -------------------------
+  get 'pages/user' => 'pages#user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
