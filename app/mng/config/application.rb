@@ -22,5 +22,13 @@ module Mng
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # :: Add :: Do not treat assets
+    config.assets.enabled = false
+
+    # :: Add :: Do not generate asset files
+    config.generators do |g|
+      g.assets false
+    end
   end
 end

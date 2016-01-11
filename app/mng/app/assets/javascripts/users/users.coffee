@@ -4,4 +4,4 @@
 
 $ ->
   $('#test').click ->
-    alert 'test click'
+    alert 'test click12345'
