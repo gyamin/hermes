@@ -12,11 +12,11 @@ var del = require('del');
 var config = {
     coffee: {
         src: 'app/assets/javascripts/**/*.coffee',
-        dest: 'public/javascripts'
+        dest: 'public/assets'
     },
     sass: {
         src: 'app/assets/stylesheets/**/*.scss',
-        dest: 'public/stylesheets'
+        dest: 'public/assets'
     }
 }
 
