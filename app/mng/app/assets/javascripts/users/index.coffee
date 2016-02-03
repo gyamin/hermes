@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+class UserConst
+  @url = "/api/users/index"
+
 class User extends Backbone.Model
   defaults: ->
     id: 0
@@ -32,11 +35,11 @@ class View extends Backbone.View
     search_text = $('.txt-search').val()
     console.log search_text
     users = new UsersCollection()
-    users.url = "/api/users/index?name=" + search_text
+#    users.url = "/api/users/index?name=" + search_text
+    users.url = UserConst.url + "?name=" + search_text
     console.log users.url
     users.fetch
       success: =>
-        console.log users.models
         # viewで描画処理
         @render(users.models)
       error: (err) ->
@@ -45,7 +48,6 @@ class View extends Backbone.View
 # 画面描画処理
   render: (users) =>
     $(".search-results").empty()
-    console.log users
     for user in users
       buff = @template(user.toJSON())
       console.log buff
