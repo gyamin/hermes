@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # For api routing
   # -------------------------
-  get 'users/index' => 'api/users#index'
+  get 'api/users/index' => 'api/users#index'
 
   # For web page routing
   # -------------------------

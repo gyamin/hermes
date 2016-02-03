@@ -1,13 +1,18 @@
 <%= stylesheet_link_tag "users/users.css" %>
 <%= javascript_include_tag "users/index.js" %>
-<h1>ユーザ検索</h1>
-<section class="search-condition">
-  <p>検索条件</p>
-  <input type="text" size="10" placeholder="名前" />
-  <input class="btn-search size-mid" type="button" value="検索" />
+
+<section id="user-search">
+  <h1>ユーザ検索</h1>
+  <div class="search-condition">
+    <p>検索条件</p>
+    <input class="txt-search" type="text" size="10" placeholder="名前" />
+    <input class="btn-search size-mid" type="button" value="検索" />
+  </div>
+
+  <h1>検索結果</h1>
+  <div class="search-results">
+    <ul></ul>
+  </div>
+
+
 </section>
-
-
-<div id="test">
-
-</div>
