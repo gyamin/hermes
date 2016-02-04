@@ -4,7 +4,7 @@ class UsersSeeder
   include Seeder
 
   def initialize
-    @model_name = 'User'
+    @model_name = 'UserSearch'
     @talbe_name = 'pages'
     @file_path = File.dirname(__FILE__) + "/csv/#{@talbe_name}.csv"
 
