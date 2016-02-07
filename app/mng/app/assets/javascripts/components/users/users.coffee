@@ -3,9 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 class window.UserSearchConst
-  @url = "/api/users/index"
+  @url = "/api/user_search/index"
 
-class window.UserSearch extends Backbone.Model
+class window.User extends Backbone.Model
   defaults: ->
     id: 0
     first_name: ''
@@ -15,8 +15,7 @@ class window.UserSearch extends Backbone.Model
     updated_at: ''
 
 class window.UserSearchCollection extends Backbone.Collection
-  model: window.UserSearch
-  url: '/api/users/index'
+  model: window.User
   parse: (data) ->
     console.log data.users
     return data.users
@@ -25,11 +24,16 @@ class window.UserSearchView extends Backbone.View
   el: '#user-search'
   model: window.UserSearch
   collection: window.UserSearchCollection
-  template: _.template('<li><%-last_name%> <%-first_name%></li>')
+  template: _.template('
+      <li>
+        <button type="button" class="btn-add-user" data-userid="<%=id%>">追加</button>
+        <%-last_name%> <%-first_name%>
+      </li>
+    ')
   events:
     "click .btn-search": 'search'
 
-# Search Users
+  # Search Users
   search: ->
     # get search text string
     search_text = $('.txt-search').val()
