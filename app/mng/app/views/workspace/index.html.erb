@@ -1,0 +1,20 @@
+<%= javascript_include_tag "workspace/workspace.js" %>
+<%= stylesheet_link_tag "components/users/users.css" %>
+<%= javascript_include_tag "components/users/users.js" %>
+
+<h1>Workspace#index</h1>
+<main>
+  <!-- user search -->
+  <%= render 'share/user_search' %>
+
+  <!-- message area -->
+  <section id="to-users">
+    <ul>
+    </ul>
+  </section>
+
+  <section id="message-entry">
+    <input type="text" class="txt-message"/>
+  </section>
+
+</main>
