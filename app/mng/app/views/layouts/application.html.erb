@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "vendor/jquery-2.2.0", "vendor/underscore", "vendor/backbone" %>
+  <%= javascript_include_tag "components/common/app_global.js" %>
+  <%= javascript_include_tag "components/common/config.js" %>
+  <%= javascript_include_tag "components/common/logger.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>

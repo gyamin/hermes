@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 class window.UserSearchConst
-  @url = "/api/user_search/index"
+  @url = "/api/users/index"
 
 class window.User extends Backbone.Model
   defaults: ->
@@ -18,6 +18,7 @@ class window.UserSearchCollection extends Backbone.Collection
   model: window.User
   parse: (data) ->
     console.log data.users
+    window.Hermes.global.UserSearchCollection = data.users
     return data.users
 
 class window.UserSearchView extends Backbone.View
@@ -39,7 +40,6 @@ class window.UserSearchView extends Backbone.View
     search_text = $('.txt-search').val()
     console.log search_text
     users = new window.UserSearchCollection()
-#    users.url = "/api/users/index?name=" + search_text
     users.url = window.UserSearchConst.url + "?name=" + search_text
     console.log users.url
     users.fetch

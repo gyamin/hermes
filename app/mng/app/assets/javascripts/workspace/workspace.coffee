@@ -4,12 +4,17 @@ class window.ToUserCollection extends Backbone.Collection
 class window.ToUserView extends Backbone.View
   el: 'main'
   events:
-    "click .btn-add-user": 'addUser'
+    "click .btn-add-user": 'setUserToAddress'
 
-  addUser: (elem) ->
+  # 追加ボタンがクリックされたユーザをToAddressに設定
+  setUserToAddress: (elem) ->
+    logger = new window.Hermes.common.logger()
+    logger.debug window.Hermes.global.UserSearchCollection
+    console.log window.Hermes.global.UserSearchCollection
     console.log this
     console.log elem.target;
     console.log $(elem.target).data 'userid'
 
 $ ->
-  view = new window.ToUserView()
+  userSearchView = new window.UserSearchView()
+  toUserView = new window.ToUserView()
