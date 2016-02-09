@@ -1,3 +1,5 @@
+@logger = new window.Hermes.common.logger()
+
 class window.ToUserCollection extends Backbone.Collection
   model: window.UserSearch
 
@@ -8,9 +10,10 @@ class window.ToUserView extends Backbone.View
 
   # 追加ボタンがクリックされたユーザをToAddressに設定
   setUserToAddress: (elem) ->
-    logger = new window.Hermes.common.logger()
     logger.debug window.Hermes.global.UserSearchCollection
-    console.log window.Hermes.global.UserSearchCollection
+
+
+
     console.log this
     console.log elem.target;
     console.log $(elem.target).data 'userid'
